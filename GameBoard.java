@@ -95,9 +95,9 @@ public class GameBoard extends JFrame {
 
         for (int row = 0; row < SIZE; row++) {
             for (int col = 0; col < SIZE; col++) {
-                int pokePosition = Integer.parseInt(piecesArray[pieceRow][2]);
+                int piecePosition = Integer.parseInt(piecesArray[pieceRow][2]);
             
-                if(squareName == pokePosition){
+                if(squareName == piecePosition){
                     String imagePath = piecesArray[pieceRow][0];  //save the file name to a string variable
                     String hpText = piecesArray[pieceRow][1]; //save the hp value to a string variable
 
@@ -107,7 +107,6 @@ public class GameBoard extends JFrame {
                     JLabel pieceLabel = new JLabel(new ImageIcon(scaledImage));
                     JLabel textLabel = new JLabel(hpText, SwingConstants.CENTER);
                     textLabel.setForeground(Color.BLACK); // Make text black and center bottom
-                    System.out.println("adding 1 piece:" + hpText);
                     JPanel piecePanel = new JPanel(new BorderLayout());
                     piecePanel.setOpaque(false); // false sets img bg transparent, image must already be a transparent png
                     piecePanel.add(pieceLabel, BorderLayout.CENTER);
@@ -115,7 +114,6 @@ public class GameBoard extends JFrame {
 
                     squares[row][col].setLayout(new BorderLayout());
                     squares[row][col].add(piecePanel, BorderLayout.CENTER);
-                
                 
                 pieceRow++;
                 }
